@@ -30,7 +30,7 @@ class ImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Minecraft Mobs'),
+        title: const Text('Minecraft Mobs UwU'),
         centerTitle: true,
         
       ),
