@@ -1,6 +1,6 @@
 # listveiw
 
-A new Flutter project.
+A new Flutter project i made fopr our exercise 4 for sir mateo.
 
 ## Getting Started
 
