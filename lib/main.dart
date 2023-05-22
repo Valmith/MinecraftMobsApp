@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'Screens/Desc.dart';
-import 'Screens/homescreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,36 +26,49 @@ class ImagePage extends StatelessWidget {
     Mob('assets/images/SkeletonFace.webp', 'Skeleton', 'Skeletons are a hostile Hostile Mob that can be found in two dimensions in Minecraft and they are known to drop valuable loot upon death. In this Minecraft Skeleton guide, we will teach you everything you need to know about how to find a Skeleton, how to defeat a Skeleton, quick tips and facts that you may not have known, as well as their available loot drops.'),
   ];
 
-@override
+  @override
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: const Text('Minecraft Mobs List'),
+      title: const Text('-Minecraft Mobs List-'),
       centerTitle: true,
+      backgroundColor: Color.fromARGB(232, 38, 226, 5),
     ),
-    body: Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: GridView.count(
-        crossAxisCount: 2,
-        childAspectRatio: 1,
-        children: List.generate(mobs.length, (index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DescriptionScreen(mobs[index]),
-                ),
-              );
-            },
-              child: Card(
-                elevation: 2,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.asset(
-                    mobs[index].image,
-                    fit: BoxFit.cover,
+    body: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/dirtbg.png'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          childAspectRatio: 1, // Adjust this value to make the tiles smaller
+          children: List.generate(mobs.length, (index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DescriptionScreen(mobs[index]),
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(9.0), // Add padding to the Card widget
+                child: Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      mobs[index].image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -64,37 +76,38 @@ Widget build(BuildContext context) {
           }),
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+    ),
+    drawer: Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(232, 38, 226, 5),
+            ),
+            child: Text(
+              'MENU PAGE',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
               ),
-              child: Text(
-                'Minecraft Mobs List',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
             ),
-            ListTile(
-              title: Text('Home'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Settings'),
-              onTap: () {
-                // TODO: Add logic for navigating to the settings page
-              },
-            ),
-          ],
-        ),
+          ),
+          ListTile(
+            title: Text('Home'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Settings'),
+            onTap: () {
+              // TODO: Add logic for navigating to the settings page
+            },
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
