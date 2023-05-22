@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "629149370524",
+    "project_id": "minecraftgalleryapp",
+    "storage_bucket": "minecraftgalleryapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629149370524:android:783b41f938087e5be28559",
+        "android_client_info": {
+          "package_name": "Minecraft_Gallery.App"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629149370524-lelmiconnfclmnj4t1q234mc0faunccl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw7gqyari37K12_4HVb-qamC5by7wQbKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629149370524-lelmiconnfclmnj4t1q234mc0faunccl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
