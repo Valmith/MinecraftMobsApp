@@ -9,37 +9,20 @@ class Mob {
 }
 
 class DescriptionScreen extends StatelessWidget {
-  final Mob mob;
+  final String imageUrl;
 
-  DescriptionScreen(this.mob);
+  DescriptionScreen(this.imageUrl);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(mob.name),
-        centerTitle: true,
+        title: Text('Description'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              mob.image,
-              fit: BoxFit.cover,
-            ),
-            SizedBox(height: 16.0),
-            Center(
-              child: Text(
-                mob.description,
-                style: TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
-        ),
+      body: Center(
+        child: Image.network(imageUrl),
       ),
     );
   }
 }
+
